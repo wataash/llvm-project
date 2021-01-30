@@ -1,3 +1,5 @@
+log_debug("${CMAKE_CURRENT_LIST_LINE}" "")
+
 # Discover the projects that use CMake in the subdirectories.
 # Note that explicit cmake invocation is required every time a new project is
 # added or removed.
