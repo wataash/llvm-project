@@ -238,6 +238,13 @@ static int writeValueProfData(ProfDataWriter *Writer,
   return 0;
 }
 
+// #0  lprofWriteData (Writer=Writer@entry=0x7ffe8adef7d0, VPDataReader=0x40a1c0 <TheVPDataReader>, SkipNameDataWrite=SkipNameDataWrite@entry=0) at /home/wsh/qc/llvm-project/compiler-rt/lib/profile/InstrProfilingWriter.c:242
+// #1  0x00000000004026a6 in writeFile (OutputName=OutputName@entry=0x7ffe8adef810 "main.profraw.25306") at /home/wsh/qc/llvm-project/compiler-rt/lib/profile/InstrProfilingFile.c:346
+// #2  0x00000000004034a3 in __llvm_profile_write_file () at /home/wsh/qc/llvm-project/compiler-rt/lib/profile/InstrProfilingFile.c:935
+// #3  0x00007f5ea40fe2ac in __run_exit_handlers (status=0, listp=0x7f5ea429b718 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:108
+// #4  0x00007f5ea40fe3da in __GI_exit (status=<optimized out>) at exit.c:139
+// #5  0x00007f5ea40ddb72 in __libc_start_main (main=0x4013f0 <main>, argc=1, argv=0x7ffe8adef9a8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffe8adef998) at ../csu/libc-start.c:342
+// #6  0x000000000040132a in _start ()
 COMPILER_RT_VISIBILITY int lprofWriteData(ProfDataWriter *Writer,
                                           VPDataReaderType *VPDataReader,
                                           int SkipNameDataWrite) {
